@@ -1,0 +1,78 @@
+/*Style page de Quiz*/
+/*Fait par Warren*/
+body{
+    margin:0;
+    font-family: Arial;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+}
+
+.quiz-container{
+    width: 200%;/*toute la largeur*/
+    height:100px;/*hauteur*/
+    max-width: 1800px;/*largeur max*/
+    display:flex;
+    flex-direction: column;/*placer en colonne*/
+    gap: 20px;
+}
+
+.petit-bloc{
+    height: 20 px;
+    display: flex;
+    flex-wrap: wrap;/*place les blocs sur plusieurs ligne */
+    flex-direction: column;/*Place en colonne*/
+    gap: 30px;/*Emplacement entre les petits*/
+    justify-content: center;/*Place les blocs au centre*/
+    
+}
+
+
+.bloc{
+    background-color: #28a745;
+    color:white;
+    padding: 20px;
+    border-radius:8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    flex: 1 1 calc(40% - 30px);/*chaque bloc prend 25% de la largeur*/
+    max-width:calc(40% - 30px) ;/*limite la largeur max*/
+    text-align: center;
+    transition: width 5s;/*animation avec celui qui suit*/
+}
+
+li{
+float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }    
+
+  li a:hover {
+    background-color: #111;
+  }
+
+  .barre-navig{
+    padding:40px;
+    text-align:center;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 8px;
+    box-shadow:0 4px 6px rgba(0,0,0,0.1);
+    flex: 0 0 50%;/*occupe la hauteur à 50%*/
+    display: flex;
+  }

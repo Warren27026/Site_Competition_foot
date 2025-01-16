@@ -1,0 +1,81 @@
+/*Style page d'accueil*/
+/*Réalisé par Betchem Ngon Warren Shamir*/
+body{
+    margin:0;
+    font-family: Arial;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+}
+
+.container{
+    width: 200%;/*toute la largeur*/
+    height:100px;/*hauteur*/
+    max-width: 1800px;/*largeur max*/
+    display:flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.grand-bloc{
+    background-color: #007bff;
+    color:white;
+    padding:40px;
+    text-align:center;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 8px;
+    box-shadow:0 4px 6px rgba(0,0,0,0.1);
+    flex: 0 0 600%;/*occupe la hauteur à 600%*/
+    display: flex;
+}
+
+.petit-bloc{
+    display: flex;
+    flex-wrap: wrap;/*place les blocs sur plusieurs ligne */
+    gap: 15px;/*Emplacement entre les petits*/
+    justify-content: center;/*Place les blocs au centre*/
+    
+}
+
+
+.bloc{
+    background-color: #28a745;
+    color:white;
+    padding: 20px;
+    border-radius:8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    flex: 1 1 calc(25% - 30px);/*chaque bloc prend 25% de la largeur*/
+    max-width:calc(25% - 30px) ;/*limite la largeur max*/
+    text-align: center;
+    transition: width 5s;/*animation avec celui qui suit*/
+}
+
+
+.bloc:hover{
+    width: 60%;
+}
+
+.Pied_page{
+    padding: 20px;
+    text-align: center;
+    background: #ddd;
+    margin-top: 20px;
+  }
+
+
+@media (max-width: 768px){
+    .bloc{
+        flex: 1 1 calc(50%-20px);/*chaque bloc prend 50% de la largeur*/
+        max-width: :100px;
+    }
+}
+
+@media (max-width: 480px){
+    .bloc{
+        flex: 1 1 100%;/*chaque bloc prend toute la largeur*/
+        max-width: :100px; 
+    }
+}
