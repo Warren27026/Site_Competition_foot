@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vidéo en fond d'écran</title>
+    <style>
+        /* Style global */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden; /* Empêche le défilement */
+        }
+
+        /* Vidéo en fond */
+        .fond-video {
+            position: fixed; /* Fixer la vidéo au fond */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Adapte la vidéo pour couvrir tout l'écran */
+            z-index: -1; /* Place la vidéo derrière tout le contenu */
+        }
+
+        /* Contenu au-dessus de la vidéo */
+        .contenu {
+            position: relative; /* Position au-dessus de la vidéo */
+            color: white;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            padding-top: 20%;
+            z-index: 1; /* Place le texte au-dessus de la vidéo */
+        }
+    </style>
+</head>
+<body>
+    <!-- Vidéo en fond -->
+    <video class="fond-video" src="fcmobile.mp4" autoplay muted loop></video>
+
+    <!-- Contenu par-dessus la vidéo -->
+    <div class="contenu"></div>
+</body>
+</html>
