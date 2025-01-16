@@ -1,0 +1,96 @@
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vidéos en fond d'écran</title>
+    <style>
+        /* Style global pour enlever les marges et adapter le contenu */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden; /* Empêcher le défilement */
+        }
+
+        /* Conteneur pour les vidéos en plein écran */
+        .fond-video {
+            position: fixed; /* Fixer le conteneur au fond de l'écran */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Placer derrière tout le contenu */
+        }
+
+        /* Toutes les vidéos sont superposées */
+        .fond-video video {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Adapter la vidéo au conteneur sans déformation */
+            opacity: 0; /* Rendre invisible par défaut */
+            transition: opacity 1s ease; /* Transition fluide entre les vidéos */
+        }
+
+        /* La vidéo active est visible */
+        .fond-video video.actif {
+            opacity: 1; /* Rendre visible la vidéo active */
+        }
+
+        /* Contenu du site (par-dessus la vidéo) */
+        .contenu {
+            position: relative; /* Positionner le contenu au-dessus de la vidéo */
+            color: white;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            padding-top: 20%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Conteneur pour les vidéos en fond d'écran -->
+    <div class="fond-video">
+        <video src="foot1.mp4" class="actif" autoplay muted loop></video>
+        <video src="foot2.mp4" muted loop></video>
+        <video src="foot3.mp4" muted loop></video>
+        <video src="foot4.mp4" muted loop></video>
+        <video src="foot5.mp4" muted loop></video>
+    </div>
+
+    <!-- Contenu de la page par-dessus les vidéos -->
+    <div class="contenu">
+        <h1>EASPORT</h1>
+        <P>C'EST DANS LE JEU !!!!!</P>
+    </div>
+
+    <script>
+        // Index de la vidéo active
+        let indexVideo = 0;
+        
+        // Sélectionner toutes les vidéos
+        const videos = document.querySelectorAll('.fond-video video');
+        
+        // Fonction pour changer de vidéo
+        function changerVideo() {
+            // Retirer la classe 'actif' de la vidéo actuelle
+            videos[indexVideo].classList.remove('actif');
+            
+            // Passer à la vidéo suivante (ou revenir à la première)
+            indexVideo = (indexVideo + 1) % videos.length;
+            
+            // Ajouter la classe 'actif' à la nouvelle vidéo
+            videos[indexVideo].classList.add('actif');
+            
+            // Lancer la lecture de la nouvelle vidéo
+            videos[indexVideo].play();
+        }
+        
+        // Changer la vidéo toutes les 5 secondes
+        setInterval(changerVideo, 5000);
+    </script>
+</body>
+</html>
