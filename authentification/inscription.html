@@ -2,18 +2,24 @@
 <head>
 <meta charset="UTF-8">
 <title>inscription</title>
+<link rel="stylesheet" href="style inscription.css">
 </head>
 <body>
 <h1> inscription </h1>
-<form method="post" action="traiteform.php">
+<form method="post" action="inscription.php">
 <select name="genre">
 <option value="homme">homme</option>
 <option value="femme">femme</option>
 </select >
 <br /> <br />
-Nom : <input name="nom" size="30px"/> <br /> <br />
-mot de passe : <input name="password" /><br /><br />
-Adresse mail : <input name="mail" /><br /><br />
+<label for="name">Nom</label>
+<input type="text" id="name" name="name" required>  <br><br>
+
+<label for="email">Adresse email</label>
+<input type="email" id="email" name="email" required> <br><br>
+
+<label for="password">mot de passe</label>
+<input type="password" id="password" name="password" required> <br><br>
 
 <input type="submit" value="inscription" name = "inscription" />
 </form>
