@@ -7,19 +7,19 @@
 <body>
 <h1> inscription </h1>
 <form method="post" action="inscription.php">
-<select name="genre">
-<option value="homme">homme</option>
-<option value="femme">femme</option>
+<select name="genre"id="genre">
+<option value="homme" name="homme">homme</option>
+<option value="femme" name="femme">femme</option>
 </select >
 <br /> <br />
 <label for="name">Nom</label>
-<input type="text" id="name" name="name" required>  <br><br>
+<input type="text" id="name" name="name" placeholder="Entrez votre nom..." required>  <br><br>
 
 <label for="email">Adresse email</label>
-<input type="email" id="email" name="email" required> <br><br>
+<input type="text" id="email" name="email" placeholder="Entrez votre adresse mail..." required> <br><br>
 
 <label for="password">mot de passe</label>
-<input type="password" id="password" name="password" required> <br><br>
+<input type="password" id="password" name="password" placeholder="Entrez votre mdp..." required> <br><br>
 
 <input type="submit" value="inscription" name = "inscription" />
 </form>

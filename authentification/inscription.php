@@ -1,52 +1,63 @@
 <?php
+
+
+// inclusion du fichier de connexion a la base de donnée
 include("config.php");
 
-if (isset($_POST["inscription"])) {
 
-    $message = '';
 
-    // Valider 
-    if (isset($_POST['name']) && isset($_POST['password']) && isset($_POST['email']) && isset($_POST['genre'])) {
-      
-        $name = $conn->real_escape_string($_POST['name']);
-        $password = $_POST['password'];
-        $email = $conn->real_escape_string($_POST['email']);
-        $gender = $conn->real_escape_string($_POST['genre']);
 
-        // Valider le format de l'email
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $message = "le format de l'email est invalide";
-            echo $message;
-            exit;
-        }
+// Vérification si le formulaire d'inscription a été soumis
+if (isset($_POST['inscription'])) {
 
-        // valider la taille et le format du mot de passe
-        if (!preg_match('/^(?=.*[A-Za-z])(?=.*\d)(?=.*[A-Z]).{8,}$/', $password)) {
-            $message = "le mot de passe doit avoir 8 caractères au moins, avec au moins un chiffre et une majuscule ";
-            echo $message;
-            exit;
-        }
+    // Récupération des données du formulaire
+    $username = ( $_POST['name']);
 
-        // securiser le mot de passe
-        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+    $password = password_hash($_POST['password'],PASSWORD_DEFAULT);// Hashage sécurisé du mot de passe
+    
+    $email =  ($_POST['email']);
 
-        // Inserer les informations dans la base de donnée
-        $sql = "INSERT INTO authentification (email, username, mot_de_passe, genre) VALUES ('$email', '$name', '$hashed_password', '$gender')";
+    $genre =  ($_POST['genre']);
 
-        if ($conn->query($sql) === TRUE) {
-            echo "Inscription réussie ! Vous pouvez vous connecter.";
-        } else {
-            echo "Erreur : " . $conn->error;
-        }
+        // Vérification si l'utilisateur existe déjà dans la base de données
 
-    } else {
-        $message = "Veuillez remplir tous les champs.";
-        echo $message;
-    }
+            $verifRequete = $mysql->prepare("SELECT * FROM utilisateur WHERE email = :email");
+            $verifRequete->execute(["email" => $email]);
+    
+            if ($verifRequete->rowCount() > 0) {
+                // Si l'utilisateur existe déjà
+                echo "Vous avez déjà un compte.</br> Vous serez redirigé vers la page de connexion dans 5 secondes.";
+              header("Refresh:5; url=connexion.php");// Redirection automatique après 5 secondes vers la page de connexion
+              exit;
+                  //Utilisateur existant
+             
+            } else{
 
+
+     
+        // Préparation de la requête d'insertion
+    $requete = $mysql->prepare( "INSERT INTO utilisateur VALUES (0, :username, :password, :email, :genre)");
+    $requete->execute(
+        array(
+            "username" => $username,
+            "password" => $password,
+            "email" => $email,
+            "genre" => $genre,
+        )
+        );
+        $reponse = $requete->fetchAll(PDO::FETCH_ASSOC);
+    
+       // echo "inscription réussie !";
+       $message = "Inscription réussie !";
+       echo '<p style="color: white; background-color: #28a745; padding: 20px; border-radius: 5px; font-size: 18px; font-weight: bold; text-align: center;">
+         '. $message . '
+      </p>';
+      header("Refresh:3; url=connexion.php");
+   
+}
 }
 
-// fermer la connexion
-$conn->close();
-?>
+
+
+
 

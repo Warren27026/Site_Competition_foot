@@ -1,14 +1,12 @@
 <?php
 //paramètre de connexion à la base de données
-$server="localhost:3306";
-$user="e2405720";
-$pwd="Yae172hd";
-$db="e2405720";
-//connexion au serveur où se trouve la base de données
-$mysqli = new mysqli($server, $user, $pwd, $db);
-//affichage d 'un message d'erreur si la connexion a été refusée
-if (!$mysqli){
-echo "Connexion à la base impossible";
+$server = "127.0.0.1";
+$user = "root";
+$password = "";
+try {
+    $mysql = new PDO("mysql:host=$server;dbname=user", $user, $password);
+    $mysql->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    //echo "connexion réussie !";
+} catch (PDOException $e) {
+    echo "Erreur : ".$e->getMessage();
 }
-echo 'Connexion réussie';
-?>
