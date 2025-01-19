@@ -1,4 +1,12 @@
 <!--Nana Talom-->
+<?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    header("Location: connexion.php");
+    exit;
+}
+$username = $_SESSION['username'];
+?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -65,6 +73,7 @@
     <!-- Contenu de la page par-dessus les vidéos -->
     <div class="contenu">
         <h1>Footix</h1>
+        <p>Bienvenue, <?php echo htmlspecialchars($username); ?>!</p> 
         <P>Cliquez pour avancer</P>
     </div>
 <!-- Musique en fond -->
