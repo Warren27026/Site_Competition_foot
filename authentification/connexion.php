@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 if (isset($_COOKIE['user_id']) && isset($_COOKIE['user_email'])) {
     $_SESSION['user_id'] = $_COOKIE['user_id'];
     $_SESSION['user_email'] = $_COOKIE['user_email'];
-    header("Location: ../page-quiz/accueil-quiz.html");
+    header("Location: ../video changente.html");
     exit;
 }
 // Récupère l'email stocké dans le cookie (s'il existe) pour pré-remplir le champ email
