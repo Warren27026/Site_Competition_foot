@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coupe d'Afrique des Nations</title>
+  <link href="style.css" rel="stylesheet" media="all">
+</head>
+<body>
+  <!-- Barre de navigation -->
+  <nav>
+    <div class="logo">
+      <a href="#">CAN</a>
+    </div>
+    <div class="nav-links">
+      <a href="#palmares">Palmarès</a>
+      <a href="#historique">Historique</a>
+      <a href="#moments">Moments Mémorables</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- En-tête principale -->
+  <header class="entete">
+    <h1>Coupe d'Afrique des Nations</h1>
+    <p>slogan</p>
+  </header>
+
+  <!-- Section : Historique -->
+  <section id="historique" class="section">
+    <h2>Historique de la Compétition</h2>
+    <p>
+      Plongez dans l'origine et l'évolution de la Coupe d'Afrique des Nations. Découvrez comment cette compétition est devenue un événement majeur du football africain.
+    </p>
+  </section>
+  
+  <!-- Section : Palmarès -->
+  <section id="palmares" class="section">
+    <h2>Palmarès de la Coupe d'Afrique des Nations</h2>
+    <p>Voici la liste des équipes ayant remporté la CAN :</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Pays</th>
+          <th>Nombre de victoires</th>
+          <th>Années de victoire</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Égypte</td>
+          <td>7</td>
+          <td>1957, 1959, 1986, 1998, 2006, 2008, 2010</td>
+        </tr>
+        <tr>
+          <td>Cameroun</td>
+          <td>5</td>
+          <td>1984, 1988, 2000, 2002, 2017</td>
+        </tr>
+        <tr>
+          <td>Ghana</td>
+          <td>4</td>
+          <td>1963, 1965, 1978, 1982</td>
+        </tr>
+        <tr>
+          <td>Nigeria</td>
+          <td>3</td>
+          <td>1980, 1994, 2013</td>
+        </tr>
+        <tr>
+          <td>Côte d'Ivoire</td>
+          <td>2</td>
+          <td>1992, 2015</td>
+        </tr>
+        <tr>
+          <td>Algérie</td>
+          <td>2</td>
+          <td>1990, 2019</td>
+        </tr>
+        <tr>
+          <td>RD Congo</td>
+          <td>2</td>
+          <td>1968, 1974</td>
+        </tr>
+        <tr>
+          <td>Afrique du Sud</td>
+          <td>1</td>
+          <td>1996</td>
+        </tr>
+        <tr>
+          <td>Maroc</td>
+          <td>1</td>
+          <td>1976</td>
+        </tr>
+        <!-- Ajouter d'autres équipes si nécessaire -->
+      </tbody>
+    </table>
+
+    <h3>Les meilleurs buteurs de l'histoire de la CAN</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Joueur</th>
+          <th>Pays</th>
+          <th>Buts</th>
+          <th>Années actives</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Samuel Eto'o</td>
+          <td>Cameroun</td>
+          <td>18</td>
+          <td>2000-2010</td>
+        </tr>
+        <tr>
+          <td>Laurent Pokou</td>
+          <td>Côte d'Ivoire</td>
+          <td>14</td>
+          <td>1968-1970</td>
+        </tr>
+        <tr>
+          <td>Rashidi Yekini</td>
+          <td>Nigeria</td>
+          <td>13</td>
+          <td>1988-1994</td>
+        </tr>
+        <tr>
+          <td>Hassan El-Shazly</td>
+          <td>Égypte</td>
+          <td>12</td>
+          <td>1963-1970</td>
+        </tr>
+        <tr>
+          <td>Patrick Mboma</td>
+          <td>Cameroun</td>
+          <td>11</td>
+          <td>1996-2004</td>
+        </tr>
+        <!-- Ajoutez d'autres joueurs si nécessaire -->
+      </tbody>
+    </table>
+  </section>
+
+
+  <!-- Section : Moments mémorables -->
+  <section id="moments" class="section">
+    <h2>Moments Mémorables</h2>
+    <p>Revivez les plus grands matchs et événements qui ont marqué l’histoire des compétitions.</p>
+
+    <!-- Galerie de vidéos -->
+    <div class="video-gallery">
+        <div class="video-item">
+            <video controls>
+                <source src="foot2.mp4" type="video/mp4">
+                Votre navigateur ne prend pas en charge la balise vidéo.
+            </video>
+            <h3>Grand match de 1998</h3>
+        </div>
+        <div class="video-item">
+            <video controls>
+                <source src="foot4.mp4" type="video/mp4">
+                Votre navigateur ne prend pas en charge la balise vidéo.
+            </video>
+            <h3>Le but légendaire de 2002</h3>
+        </div>
+        <div class="video-item">
+            <video controls>
+                <source src="foot5.mp4" type="video/mp4">
+                Votre navigateur ne prend pas en charge la balise vidéo.
+            </video>
+            <h3>Un retournement de situation incroyable</h3>
+        </div>
+    </div>
+</section>
+
+  <!-- Pied de page -->
+  <footer>
+    <p>&copy; 2025 Football Historique. Tous droits réservés.</p>
+    <p>
+      <a href="#palmares">Palmarès</a> | 
+      <a href="#historique">Historique</a> | 
+      <a href="#moments">Moments Mémorables</a>
+    </p>
+  </footer>
+</body>
+</html>
