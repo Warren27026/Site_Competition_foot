@@ -10,21 +10,18 @@
    <body>
     <div class="container">
         <!--Bloc fond d'écran-->
-        <div class="grand-bloc">fond d'écran</div>   
+        <div class="grand-bloc"></div>   
         <!--Bloc des compétitions-->
-       <div class="petit-bloc">
-        <div class="bloc">Fond d'écran CAN</div> 
-        <div class="bloc">fond Champions league</div>   
-        <div class="bloc">Fond Coupe du Monde</div>     
-        <div class="bloc">fond Euro</div>   
-        <div class="bloc">fond Quiz</div>  
-       </div>
-       <div class="Pied_page">
-        <h2>Pied de page</h2>
-        <p><ol><li>lien du github</li>
-            <li>Noms des membres du groupe avec photo</li>
-        </ol> </p>
+        <div class="petit-bloc">
+          <div class="bloc" id="can" onclick="window.location.href='page-historique/CAN.html'" data-info="Informations sur la CAN"></div>
+          <div class="bloc" id="ldc" onclick="window.location.href='page-historique/champions-league.html'" data-info="Informations sur la champions league"></div>
+          <div class="bloc" id="coupeM" onclick="window.location.href='page-historique/Coupe-Monde.html'" data-info="Informations sur la Coupe du monde"></div>
+          <div class="bloc" id="euro" onclick="window.location.href='page-historique/euro.html'" data-info="Informations sur l'Euro"></div>
+          <div class="bloc" id="quiz" onclick="window.location.href='Page-quiz/accueil-quiz.html'" data-info="page des quiz"></div>
       </div>
+    <footer>
+      <p>&copy; 2025 Football Historique. Tous droits réservés.</p>
+    </footer>
     </div>
 </body>
 </html> 

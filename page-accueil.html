@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" contenu="width=device-width, initial-scale=1.0">
+  <title>Page avec image changeante</title>
+  <style>
+    /* Disposition générale */
+    body {
+      margin: 0;
+      display: grid;
+      grid-template-columns: 3fr 2fr; /* Image à gauche (3 parts), contenu à droite (2 parts) */
+      height: 100vh; /* La hauteur de la fenêtre */
+      font-family: Arial, sans-serif;
+    }
+
+    /* Section de l'image changeante */
+    .image-gauche {
+      position: relative;
+      overflow: hidden;
+      flex: auto;
+    }
+
+    .image-gauche::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 120%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      animation: fond-gauche 12s infinite; /* Animation qui change les images */
+    }
+
+    /* Images à afficher */
+    @keyframes fond-gauche {
+      0% {
+        background-image: url('image/coupe.jpeg');
+      }
+      33% {
+        background-image: url('image/ldc3.jpeg');
+      }
+      66% {
+        background-image: url('image/euro2.jpeg');
+      }
+      100% {
+        background-image: url('image/can2.jpeg');
+      }
+    }
+
+    /* Section du contenu */
+    .contenu {
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: #f4f4f4;
+    }
+
+    .contenu h1 {
+      margin-bottom: 20px;
+      font-size: 2.5rem;
+      color: #333333;
+    }
+
+    .contenu p {
+      font-size: 1.2rem;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    .contenu a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .contenu a:hover {
+      background-color: #2980b9;
+    }
+
+    /*h1 {
+      margin-bottom: 20px;
+      font-size: 3rem; /* Taille plus grande pour le titre 
+      color: #2c3e50; /* Couleur élégante 
+      text-transform: uppercase; /* Texte en majuscules 
+      letter-spacing: 2px; /* Espacement des lettres 
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Ombre subtile 
+    }*/
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #2c3e50;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      letter-spacing: 1.5px;
+      border-left: 5px solid #3498db; /* Barre colorée à gauche */
+      padding-left: 15px; /* Espacement entre la barre et le texte */
+    }
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background: linear-gradient(90deg, #3498db, #2ecc71); /* Dégradé  */
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.2rem;
+      border-radius: 30px; /* Bouton arrondi */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre pour un effet 3D */
+      transition: transform 0.3s, box-shadow 0.3s; /* Transition  pour l'effet */
+    }
+    a:hover {
+      transform: translateY(-5px); /* Lien qui monte légèrement */
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Ombre accentuée */
+    }
+    p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      color: #7f8c8d;
+      margin-bottom: 20px;
+      text-align: justify; /* Texte justifié */
+    }
+    
+
+  </style>
+</head>
+<body>
+  <!-- Section gauche avec image changeante -->
+  <div class="image-gauche"></div>
+
+  <!-- Section droite avec contenu -->
+  <div class="contenu">
+    <h1>Bienvenue sur notre site</h1>
+    <p>
+        Découvrez le monde passionnant du football à travers l'histoire ! Notre site est dédié à vous offrir une plongée complète dans l'univers des compétitions de football, des tournois légendaires aux rencontres mémorables. Explorez les statistiques des équipes, les performances des joueurs emblématiques et les moments marquants qui ont façonné le sport roi. Que vous soyez un fan nostalgique ou un curieux passionné, revivez les épopées et partagez la magie du football d’hier et d’aujourd’hui.
+    </p>
+    <a href="authentification/inscription.html">Commencez maintenant</a>
+    <p>ou</p>
+    <a href="authentification/inscription.html">Continuez l'aventure</a>
+  </div>
+</body>
+</html>

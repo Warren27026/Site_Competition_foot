@@ -20,11 +20,11 @@ body{
 }
 
 .petit-bloc{
-    height: 20 px;
+  
     display: flex;
     flex-wrap: wrap;/*place les blocs sur plusieurs ligne */
     flex-direction: column;/*Place en colonne*/
-    gap: 30px;/*Emplacement entre les petits*/
+    gap: 80px;/*Emplacement entre les petits*/
     justify-content: center;/*Place les blocs au centre*/
     
 }
@@ -34,12 +34,62 @@ body{
     background-color: #28a745;
     color:white;
     padding: 20px;
-    border-radius:8px;
+    border-radius:15px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    flex: 1 1 calc(40% - 30px);/*chaque bloc prend 25% de la largeur*/
-    max-width:calc(40% - 30px) ;/*limite la largeur max*/
+    flex: 1 1 calc(40% - 30px);/*chaque bloc prend 40% de la largeur*/
+    max-width:calc(60% - 30px) ;/*limite la largeur max*/
     text-align: center;
     transition: width 5s;/*animation avec celui qui suit*/
+    
+    position: relative; /* Nécessaire pour l'infobulle */
+  }
+  
+  /* Style de l’infobulle */
+  .bloc::after {
+      content: attr(data-info); /* Affiche le texte de l'attribut */
+      position: absolute;
+      bottom: 110%; /* Place l’infobulle au-dessus du bloc */
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(0, 0, 0, 0.8); /* Fond sombre */
+      color: white; /* Texte blanc */
+      padding: 5px 10px;
+      border-radius: 4px;
+      font-size: 14px;
+      white-space: nowrap; /* Empêche le retour à la ligne */
+      opacity: 0; /* Caché par défaut */
+      pointer-events: none; /* Empêche d’interagir avec */
+      transition: opacity 0.3s ease; /* Transition fluide */
+  }
+  
+  /* Apparition de l’infobulle au survol */
+  .bloc:hover::after {
+      opacity: 1; /* Devient visible */
+  }
+  
+  /* Flèche sous l’infobulle */
+  .bloc::before {
+      content: '';
+      position: absolute;
+      bottom: 100%; /* Juste en-dessous de l’infobulle */
+      left: 50%;
+      transform: translateX(-50%);
+      border-width: 6px;
+      border-style: solid;
+      border-color: transparent transparent rgba(0, 0, 0, 0.8) transparent; /* Triangle */
+      opacity: 0; /* Caché par défaut */
+      transition: opacity 0.3s ease;
+  }
+  
+  /* Apparition de la flèche au survol */
+  .bloc:hover::before {
+      opacity: 1; /* Devient visible */
+  }
+
+
+.bloc:hover {
+  transform: scale(1.1); /* Agrandissement */
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* Ombre renforcée */
 }
 
 li{
@@ -66,13 +116,70 @@ ul {
     background-color: #111;
   }
 
-  .barre-navig{
+  /*.barre-nav{
     padding:40px;
     text-align:center;
     font-size: 24px;
     font-weight: bold;
     border-radius: 8px;
     box-shadow:0 4px 6px rgba(0,0,0,0.1);
-    flex: 0 0 50%;/*occupe la hauteur à 50%*/
+    flex: 0 0 50%;/*occupe la hauteur à 50%
     display: flex;
+  }*/
+  .barre-nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
   }
+
+  .barre-nav a:hover {
+    color: #1abc9c;
+  }
+
+  
+  #ldc{
+    background-image: url("ldc2.jpeg");
+    background-position: center; /* centre l'image horizontalement et verticalement */
+  }
+
+  #can{
+    background-image: url("can3.jpeg");
+    background-position: center; /* centre l'image horizontalement et verticalement */
+  }
+
+#coupeM{
+    background-image: url("cm.jpeg");
+    background-position: center; /* centre l'image horizontalement et verticalement */
+
+}
+
+#euro{
+  background-image: url("euro.jpeg");
+  background-position: center; /* centre l'image horizontalement et verticalement */
+
+}
+#inter{
+  background-image: url("quizimg.jpeg");
+  background-position: center; /* centre l'image horizontalement et verticalement */
+
+}
+
+/* Pied de page */
+footer {
+  background-color: #333;
+  color: white;
+  padding: 60px ;
+  text-align: center;
+}
+
+footer .social-lien a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+footer .social-lien a:hover {
+  color: #ff6347;
+}
+
