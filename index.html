@@ -1,27 +1,331 @@
 <!DOCTYPE html>
-<html>
-   <head>     
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page d'accueil footix</title>
+  <style>
+    /* Style global */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      height: 100vh;
+    }
 
-    	<meta charset="UTF-8">
-    	<title>Historique Compétition footix</title>
-    	<link href="style-accueil.css" rel="stylesheet" media="all">
-   </head>
+    /* Carrousel */
+    .carrousel {
+      position: relative;
+      width: 80%;
+      max-width: 900px;
+      height: 1000px;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      margin-top: 20px;
+    }
 
-   <body>
-    <div class="container">
-        <!--Bloc fond d'écran-->
-        <div class="grand-bloc"></div>   
-        <!--Bloc des compétitions-->
-        <div class="petit-bloc">
-          <div class="bloc" id="can" onclick="window.location.href='page-historique/CAN.html'" data-info="Informations sur la CAN"></div>
-          <div class="bloc" id="ldc" onclick="window.location.href='page-historique/champions-league.html'" data-info="Informations sur la champions league"></div>
-          <div class="bloc" id="coupeM" onclick="window.location.href='page-historique/Coupe-Monde.html'" data-info="Informations sur la Coupe du monde"></div>
-          <div class="bloc" id="euro" onclick="window.location.href='page-historique/euro.html'" data-info="Informations sur l'Euro"></div>
-          <div class="bloc" id="quiz" onclick="window.location.href='Page-quiz/accueil-quiz.html'" data-info="page des quiz"></div>
+    /* Piste de défilement */
+    .piste-carrousel {
+      display: flex;
+      transition: transform 0.6s ease;
+    }
+
+    /* Diapositive */
+    .diapositive {
+      min-width: 100%;
+      height: 150%;
+    }
+
+    .diapositive img {
+      width: 100%;
+      height: 150%;
+      object-fit: cover;
+      border-radius: 15px;
+    }
+
+    /* Indicateurs (points sous le carrousel) */
+    .indicateurs {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+    }
+
+    .indicateurs button {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.6);
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .indicateurs button.actif {
+      background-color: #3498db;
+      transform: scale(1.2);
+    }
+
+    /* Boutons de navigation */
+    .navigation {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      z-index: 2;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 20px;
+      transform: translateY(-50%);
+    }
+
+    .bouton {
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 15px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 18px;
+      transition: background-color 0.3s;
+    }
+
+    .bouton:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    /* Contenu de la page */
+    .contenu {
+      margin-top: 20px;
+      padding: 20px;
+      background: linear-gradient(145deg, #ff9a9e, #fad0c4); /* Dégradé doux */
+      width: 80%;
+      max-width: 900px;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .contenu:hover {
+      transform: scale(1.02); /* Effet zoom léger */
+    }
+
+    .contenu h1 {
+      font-size: 2.5rem;
+      color: #333;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 15px;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 10px;
+    }
+
+    .contenu h1::after {
+      content: '';
+      position: absolute;
+      width: 60%;
+      height: 3px;
+      background-color: #3498db;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .contenu p {
+      font-size: 1.1rem;
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      transition: color 0.3s ease-in-out;
+    }
+
+    .contenu:hover p {
+      color: #3498db; /* Change la couleur du texte au survol */
+    }
+
+    .contenu a {
+      display: inline-block;
+      padding: 12px 24px;
+      background: linear-gradient(90deg, #3498db, #2ecc71);
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.2rem;
+      border-radius: 30px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+    }
+
+    .contenu a:hover {
+      transform: translateY(-5px); /* Lien qui monte légèrement */
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Ombre accentuée */
+      background-color: #2980b9; /* Couleur de fond au survol */
+    }
+
+    /* Media Queries */
+    @media (max-width: 768px) {
+      /* Carrousel */
+      .carrousel {
+        width: 95%;
+        height: 300px;
+      }
+
+      /* Texte */
+      .contenu h1 {
+        font-size: 2rem;
+      }
+
+      .contenu p {
+        font-size: 1rem;
+      }
+
+      .contenu a {
+        font-size: 1rem;
+        padding: 10px 20px;
+      }
+
+      /* Boutons */
+      .bouton {
+        padding: 12px;
+        font-size: 16px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      /* Carrousel */
+      .carrousel {
+        width: 100%;
+        height: 250px;
+      }
+
+      /* Texte */
+      .contenu h1 {
+        font-size: 1.8rem;
+      }
+
+      .contenu p {
+        font-size: 0.9rem;
+      }
+
+      .contenu a {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+      }
+
+      /* Boutons */
+      .bouton {
+        padding: 10px;
+        font-size: 14px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Carrousel -->
+  <div class="carrousel">
+    <div class="piste-carrousel">
+      <div class="diapositive">
+        <img src="image/coupe.jpeg" alt="Image 1">
       </div>
-    <footer>
-      <p>&copy; 2025 Football Historique. Tous droits réservés.</p>
-    </footer>
+      <div class="diapositive">
+        <img src="image/ldc3.jpeg" alt="Image 2">
+      </div>
+      <div class="diapositive">
+        <img src="image/euro2.jpeg" alt="Image 3">
+      </div>
+      <div class="diapositive">
+        <img src="image/can2.jpeg" alt="Image 4">
+      </div>
     </div>
+
+    <!-- Boutons de navigation -->
+    <div class="navigation">
+      <button class="bouton">&#10094;</button>
+      <button class="bouton">&#10095;</button>
+    </div>
+
+    <!-- Indicateurs -->
+    <div class="indicateurs">
+      <button class="actif"></button>
+      <button></button>
+      <button></button>
+      <button></button>
+    </div>
+  </div>
+
+  <!-- Contenu -->
+  <div class="contenu">
+    <h1>Bienvenue sur Footix</h1>
+    <p>
+        Découvrez le monde passionnant du football à travers l'histoire ! Notre site est dédié à vous offrir une plongée complète dans l'univers des compétitions de football, des tournois légendaires aux rencontres mémorables. Explorez les statistiques des équipes, les performances des joueurs emblématiques et les moments marquants qui ont façonné le sport roi. Que vous soyez un fan nostalgique ou un curieux passionné, revivez les épopées et partagez la magie du football d’hier et d’aujourd’hui.
+    </p>
+    <a href="authentification/inscription.html">Rejoignez-nous</a>
+    <p>ou</p>
+    <a href="authentification/connexion.php">Continuez l'aventure</a>
+  </div>
+
+  <script>
+    // Variables
+    const pisteCarrousel = document.querySelector('.piste-carrousel');
+    const diapositives = Array.from(document.querySelectorAll('.diapositive'));
+    const boutonsIndicateurs = document.querySelectorAll('.indicateurs button');
+    const boutonsNavigation = document.querySelectorAll('.bouton');
+    let indexActuel = 0;
+
+    // Mettre à jour le carrousel
+    function mettreAJourCarrousel() {
+      pisteCarrousel.style.transform = `translateX(-${indexActuel * 100}%)`;
+      boutonsIndicateurs.forEach((bouton, index) => {
+        bouton.classList.toggle('actif', index === indexActuel);
+      });
+    }
+
+    // Avancer et reculer
+    function avancerCarrousel() {
+      indexActuel = (indexActuel + 1) % diapositives.length;
+      mettreAJourCarrousel();
+    }
+
+    function reculerCarrousel() {
+      indexActuel = (indexActuel - 1 + diapositives.length) % diapositives.length;
+      mettreAJourCarrousel();
+    }
+
+    // Boutons de navigation
+    boutonsNavigation[0].addEventListener('click', reculerCarrousel);
+    boutonsNavigation[1].addEventListener('click', avancerCarrousel);
+
+    // Défilement automatique
+    let intervalle = setInterval(avancerCarrousel, 3000);
+
+    // Réinitialiser l'intervalle après chaque interaction utilisateur
+    function redemarrerIntervalle() {
+      clearInterval(intervalle);
+      intervalle = setInterval(avancerCarrousel, 3000);
+    }
+
+    // Interactions utilisateur
+    boutonsIndicateurs.forEach((bouton, index) => {
+      bouton.addEventListener('click', () => {
+        indexActuel = index;
+        mettreAJourCarrousel();
+        redemarrerIntervalle();
+      });
+    });
+
+  </script>
+
 </body>
-</html> 
+</html>

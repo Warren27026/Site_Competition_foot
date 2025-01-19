@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiz sur la Ligue des Champions</title>
+  <title>Quiz sur la Coupe du Monde</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -56,7 +56,7 @@
 <body>
 
   <div class="container" id="quiz">
-    <h1>Quiz sur la Ligue des Champions</h1>
+    <h1>Quiz sur la Coupe du Monde</h1>
     <div id="question"></div>
     <ul id="options"></ul>
     <button id="valider" disabled>Valider</button>
@@ -69,32 +69,32 @@
   </div>
 
   <script>
-    // Données du quiz sur la Ligue des Champions
-    const quizLDC = [
+    // Données du quiz sur la Coupe du Monde
+    const quizCDM = [
       {
-        question: "Quel joueur a marqué le plus de buts en Ligue des Champions ?",
-        options: ["Lionel Messi", "Cristiano Ronaldo", "Robert Lewandowski", "Raúl"],
-        reponse: "Cristiano Ronaldo"
+        question: "Quel pays a remporté le plus de titres de la Coupe du Monde ?",
+        options: ["Brésil", "Allemagne", "Argentine", "Italie"],
+        reponse: "Brésil"
       },
       {
-        question: "Quel club a le plus de victoires en Ligue des Champions ?",
-        options: ["Real Madrid", "AC Milan", "Liverpool", "Bayern Munich"],
-        reponse: "Real Madrid"
+        question: "Quel joueur détient le record du plus grand nombre de buts en Coupe du Monde ?",
+        options: ["Pelé", "Miroslav Klose", "Ronaldo", "Thierry Henry"],
+        reponse: "Miroslav Klose"
       },
       {
-        question: "Quel joueur détient le record du nombre de passes décisives en Ligue des Champions ?",
-        options: ["Lionel Messi", "Cristiano Ronaldo", "Xavi", "Thomas Müller"],
-        reponse: "Cristiano Ronaldo"
+        question: "En quelle année la Coupe du Monde a-t-elle été organisée pour la première fois ?",
+        options: ["1930", "1934", "1940", "1950"],
+        reponse: "1930"
       },
       {
-        question: "En quelle année a eu lieu la première édition de la Ligue des Champions (anciennement C1) ?",
-        options: ["1955", "1960", "1970", "1985"],
-        reponse: "1955"
+        question: "Quel pays a accueilli la Coupe du Monde en 2018 ?",
+        options: ["Brésil", "Allemagne", "Russie", "France"],
+        reponse: "Russie"
       },
       {
-        question: "Quel entraîneur a remporté le plus de fois la Ligue des Champions ?",
-        options: ["Carlo Ancelotti", "Zinédine Zidane", "Pep Guardiola", "Alex Ferguson"],
-        reponse: "Carlo Ancelotti"
+        question: "Quel pays a remporté la Coupe du Monde 1998 ?",
+        options: ["Brésil", "France", "Argentine", "Italie"],
+        reponse: "France"
       },
     ];
     
@@ -110,7 +110,7 @@
     
     // Charger une question
     function chargerQuestion() {
-      const questionActuelle = quizLDC[indiceQuestionActuelle];
+      const questionActuelle = quizCDM[indiceQuestionActuelle];
       elementQuestion.textContent = questionActuelle.question;
       elementOptions.innerHTML = "";
     
@@ -137,12 +137,12 @@
     // Gérer le clic sur le bouton valider
     boutonValider.addEventListener("click", () => {
       const optionSelectionnee = document.querySelector('input[name="reponse"]:checked');
-      if (optionSelectionnee && optionSelectionnee.value === quizLDC[indiceQuestionActuelle].reponse) {
+      if (optionSelectionnee && optionSelectionnee.value === quizCDM[indiceQuestionActuelle].reponse) {
         score++;
       }
     
       indiceQuestionActuelle++;
-      if (indiceQuestionActuelle < quizLDC.length) {
+      if (indiceQuestionActuelle < quizCDM.length) {
         chargerQuestion();
       } else {
         afficherResultat();
@@ -153,7 +153,7 @@
     function afficherResultat() {
       document.getElementById("quiz").style.display = "none";
       elementResultat.style.display = "block";
-      elementScore.textContent = `${score} / ${quizLDC.length}`;
+      elementScore.textContent = `${score} / ${quizCDM.length}`;
     }
     
     // Réinitialiser le quiz

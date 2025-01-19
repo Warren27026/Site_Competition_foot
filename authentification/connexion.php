@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 // Vérifie si un utilisateur est trouvé et si le mot de passe saisi correspond à celui  dans la base de donnée
             if ($user && password_verify($password, $user['password'])) {
 
-                header("Location: accueil-quizz.html"); // c'est ici qu'on va mettre la commande pour rediriger a la page d'acceuil
+                header("Location: ../accueil.html"); // c'est ici qu'on va mettre la commande pour rediriger a la page d'acceuil
                     exit;   
             } else {
                 $message = "Adresse email ou mot de passe incorrect.";

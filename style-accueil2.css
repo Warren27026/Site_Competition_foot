@@ -1,0 +1,262 @@
+/* Style page d'accueil */
+/* Réalisé par Betchem Ngon Warren Shamir */
+body {
+    margin: 0;
+    font-family: Arial;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+}
+
+.container {
+    width: 200%; /* toute la largeur */
+    height: 100px; /* hauteur */
+    max-width: 1800px; /* largeur max */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Bloc fond d'écran */
+.grand-bloc {
+    color: white;
+    padding: 60px;
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 0 0 500%;
+    min-height: 500px;
+    background-position: center;
+    background-size: cover;
+    animation: fond-change 20s infinite, fadeInUp 2s ease-out forwards, couleur-change 5s infinite;
+    position: relative;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+/* Animation fond change */
+@keyframes fond-change {
+    0% {
+        background-image: url('image/ldc.png');
+    }
+    33% {
+        background-image: url('image/real.jpg');
+    }
+    66% {
+        background-image: url('image/euro4.jpg');
+    }
+    100% {
+        background-image: url('image/coupe.jpeg');
+    }
+}
+
+/* Animation texte */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes couleur-change {
+    0% {
+        color: white;
+    }
+    25% {
+        color: #ff6347;
+    }
+    50% {
+        color: #ff69b4;
+    }
+    75% {
+        color: #ffcc00;
+    }
+    100% {
+        color: white;
+    }
+}
+
+/* Bloc des compétitions */
+.petit-bloc {
+    display: flex;
+    flex-wrap: wrap; /* place les blocs sur plusieurs lignes */
+    gap: 10px; /* Espace entre les petits blocs */
+    justify-content: center; /* Place les blocs au centre */
+    gap: 20px;
+}
+
+/* Les petits blocs (ajustés à la taille du bloc "quiz") */
+.bloc {
+    background-color: #28a745;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 1 1 250px; /* Les blocs prennent la taille de 250px de large */
+    max-width: 250px; /* Limiter la largeur max */
+    text-align: center;
+    width: 250px; /* Largeur du bloc */
+    height: 200px; /* Hauteur du bloc */
+    position: relative; /* Nécessaire pour l'infobulle */
+}
+
+/* Image de fond pour chaque bloc de compétition */
+#can {
+    background-image: url("image/can3.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#ldc {
+    background-image: url("image/ldc2.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#coupeM {
+    background-image: url("image/cm.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#euro {
+    background-image: url("image/euro3.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Style de l’infobulle */
+.bloc::after {
+    content: attr(data-info); /* Affiche le texte de l'attribut */
+    position: absolute;
+    bottom: 110%; /* Place l’infobulle au-dessus du bloc */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8); /* Fond sombre */
+    color: white; /* Texte blanc */
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    white-space: nowrap; /* Empêche le retour à la ligne */
+    opacity: 0; /* Caché par défaut */
+    pointer-events: none; /* Empêche d’interagir avec */
+    transition: opacity 0.3s ease; /* Transition fluide */
+}
+
+/* Apparition de l’infobulle au survol */
+.bloc:hover::after {
+    opacity: 1; /* Devient visible */
+}
+
+/* Flèche sous l’infobulle */
+.bloc::before {
+    content: '';
+    position: absolute;
+    bottom: 100%; /* Juste en-dessous de l’infobulle */
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: transparent transparent rgba(0, 0, 0, 0.8) transparent; /* Triangle */
+    opacity: 0; /* Caché par défaut */
+    transition: opacity 0.3s ease;
+}
+
+/* Apparition de la flèche au survol */
+.bloc:hover::before {
+    opacity: 1; /* Devient visible */
+}
+
+.bloc:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.bloc::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 120%;
+    height: 120%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
+    transform: scale(0);
+    opacity: 0;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+/* Bloc Quiz personnalisé */
+#quiz {
+    background-color: #0a3092; /* Couleur de fond pour le bloc quiz */
+    color: white;
+    position: relative;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#quiz:hover {
+    transform: translateY(-10px) scale(1.05); /* Effet de survol avec zoom */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Ombre renforcée au survol */
+}
+
+.quiz-text {
+    font-size: 60px;
+    font-weight: bold;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Ombre portée du texte pour améliorer la lisibilité */
+}
+
+/* Responsivité */
+@media (max-width: 768px) {
+    .bloc {
+        flex: 1 1 calc(50% - 20px); /* chaque bloc prend 50% de la largeur */
+    }
+}
+
+@media (max-width: 480px) {
+    .bloc {
+        flex: 1 1 100%; /* chaque bloc prend toute la largeur */
+    }
+}
+
+/* Pied de page */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+}
+
+footer .social-lien a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+footer .social-lien a:hover {
+    color: #ff6347;
+}
+
+/* Style des liens */
+a {
+    display: block; /* Permet au lien de prendre tout l'espace disponible */
+    width: 300px;
+    height: 200px;
+}

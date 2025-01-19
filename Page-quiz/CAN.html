@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiz sur la Ligue des Champions</title>
+  <title>Quiz sur la Coupe d'Afrique des Nations (CAN)</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -56,7 +56,7 @@
 <body>
 
   <div class="container" id="quiz">
-    <h1>Quiz sur la Ligue des Champions</h1>
+    <h1>Quiz sur la Coupe d'Afrique des Nations</h1>
     <div id="question"></div>
     <ul id="options"></ul>
     <button id="valider" disabled>Valider</button>
@@ -69,32 +69,32 @@
   </div>
 
   <script>
-    // Données du quiz sur la Ligue des Champions
-    const quizLDC = [
+    // Données du quiz sur la CAN
+    const quizCAN = [
       {
-        question: "Quel joueur a marqué le plus de buts en Ligue des Champions ?",
-        options: ["Lionel Messi", "Cristiano Ronaldo", "Robert Lewandowski", "Raúl"],
-        reponse: "Cristiano Ronaldo"
+        question: "Quel pays a remporté le plus de titres de la CAN ?",
+        options: ["Egypte", "Cameroun", "Nigeria", "Ghana"],
+        reponse: "Egypte"
       },
       {
-        question: "Quel club a le plus de victoires en Ligue des Champions ?",
-        options: ["Real Madrid", "AC Milan", "Liverpool", "Bayern Munich"],
-        reponse: "Real Madrid"
+        question: "En quelle année la première Coupe d'Afrique des Nations a-t-elle eu lieu ?",
+        options: ["1957", "1960", "1962", "1964"],
+        reponse: "1957"
       },
       {
-        question: "Quel joueur détient le record du nombre de passes décisives en Ligue des Champions ?",
-        options: ["Lionel Messi", "Cristiano Ronaldo", "Xavi", "Thomas Müller"],
-        reponse: "Cristiano Ronaldo"
+        question: "Quel joueur détient le record du plus grand nombre de buts en phase finale de la CAN ?",
+        options: ["Samuel Eto'o", "Riyad Mahrez", "Ahmed Hassan", "Hossam Hassan"],
+        reponse: "Ahmed Hassan"
       },
       {
-        question: "En quelle année a eu lieu la première édition de la Ligue des Champions (anciennement C1) ?",
-        options: ["1955", "1960", "1970", "1985"],
-        reponse: "1955"
+        question: "Quel pays a remporté la CAN 2019 ?",
+        options: ["Algérie", "Cameroun", "Egypte", "Nigeria"],
+        reponse: "Algérie"
       },
       {
-        question: "Quel entraîneur a remporté le plus de fois la Ligue des Champions ?",
-        options: ["Carlo Ancelotti", "Zinédine Zidane", "Pep Guardiola", "Alex Ferguson"],
-        reponse: "Carlo Ancelotti"
+        question: "Quel pays a accueilli la Coupe d'Afrique des Nations 2013 ?",
+        options: ["Afrique du Sud", "Ghana", "Tunisie", "Algérie"],
+        reponse: "Afrique du Sud"
       },
     ];
     
@@ -110,7 +110,7 @@
     
     // Charger une question
     function chargerQuestion() {
-      const questionActuelle = quizLDC[indiceQuestionActuelle];
+      const questionActuelle = quizCAN[indiceQuestionActuelle];
       elementQuestion.textContent = questionActuelle.question;
       elementOptions.innerHTML = "";
     
@@ -137,12 +137,12 @@
     // Gérer le clic sur le bouton valider
     boutonValider.addEventListener("click", () => {
       const optionSelectionnee = document.querySelector('input[name="reponse"]:checked');
-      if (optionSelectionnee && optionSelectionnee.value === quizLDC[indiceQuestionActuelle].reponse) {
+      if (optionSelectionnee && optionSelectionnee.value === quizCAN[indiceQuestionActuelle].reponse) {
         score++;
       }
     
       indiceQuestionActuelle++;
-      if (indiceQuestionActuelle < quizLDC.length) {
+      if (indiceQuestionActuelle < quizCAN.length) {
         chargerQuestion();
       } else {
         afficherResultat();
@@ -153,7 +153,7 @@
     function afficherResultat() {
       document.getElementById("quiz").style.display = "none";
       elementResultat.style.display = "block";
-      elementScore.textContent = `${score} / ${quizLDC.length}`;
+      elementScore.textContent = `${score} / ${quizCAN.length}`;
     }
     
     // Réinitialiser le quiz

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiz sur la Ligue des Champions</title>
+  <title>Quiz Football - Compétitions Internationales</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -56,7 +56,7 @@
 <body>
 
   <div class="container" id="quiz">
-    <h1>Quiz sur la Ligue des Champions</h1>
+    <h1>Quiz Football - Compétitions Internationales</h1>
     <div id="question"></div>
     <ul id="options"></ul>
     <button id="valider" disabled>Valider</button>
@@ -69,51 +69,101 @@
   </div>
 
   <script>
-    // Données du quiz sur la Ligue des Champions
-    const quizLDC = [
+    // Données du quiz mélangées sur la Ligue des Champions, la Coupe du Monde, l'Euro et la CAN
+    const quizComps = [
       {
         question: "Quel joueur a marqué le plus de buts en Ligue des Champions ?",
         options: ["Lionel Messi", "Cristiano Ronaldo", "Robert Lewandowski", "Raúl"],
         reponse: "Cristiano Ronaldo"
       },
       {
-        question: "Quel club a le plus de victoires en Ligue des Champions ?",
+        question: "Quel pays a remporté le plus de titres de la Coupe du Monde ?",
+        options: ["Allemagne", "Brésil", "Italie", "Argentine"],
+        reponse: "Brésil"
+      },
+      {
+        question: "Quel pays a accueilli l'Euro 2016 ?",
+        options: ["Allemagne", "Espagne", "France", "Italie"],
+        reponse: "France"
+      },
+      {
+        question: "Quel pays a remporté la Coupe d'Afrique des Nations 2019 ?",
+        options: ["Algérie", "Cameroun", "Egypte", "Nigeria"],
+        reponse: "Algérie"
+      },
+      {
+        question: "Quel joueur détient le record du plus grand nombre de buts en phase finale de la Coupe du Monde ?",
+        options: ["Marta", "Pelé", "Miroslav Klose", "Cristiano Ronaldo"],
+        reponse: "Miroslav Klose"
+      },
+      {
+        question: "Quel club a remporté le plus de titres de la Ligue des Champions ?",
         options: ["Real Madrid", "AC Milan", "Liverpool", "Bayern Munich"],
         reponse: "Real Madrid"
       },
       {
-        question: "Quel joueur détient le record du nombre de passes décisives en Ligue des Champions ?",
-        options: ["Lionel Messi", "Cristiano Ronaldo", "Xavi", "Thomas Müller"],
+        question: "En quelle année a eu lieu la première édition de la Coupe du Monde ?",
+        options: ["1930", "1924", "1936", "1940"],
+        reponse: "1930"
+      },
+      {
+        question: "En quelle année a eu lieu la première édition de la CAN ?",
+        options: ["1957", "1960", "1964", "1970"],
+        reponse: "1957"
+      },
+      {
+        question: "Quel pays a remporté l'Euro 2000 ?",
+        options: ["Pays-Bas", "Italie", "France", "Allemagne"],
+        reponse: "France"
+      },
+      {
+        question: "Quel joueur a marqué le plus de buts en phase finale de l'Euro ?",
+        options: ["Cristiano Ronaldo", "Michel Platini", "Rui Costa", "Zinedine Zidane"],
         reponse: "Cristiano Ronaldo"
       },
       {
-        question: "En quelle année a eu lieu la première édition de la Ligue des Champions (anciennement C1) ?",
-        options: ["1955", "1960", "1970", "1985"],
-        reponse: "1955"
+        question: "Quel pays a remporté la CAN 2013 ?",
+        options: ["Afrique du Sud", "Ghana", "Tunisie", "Algérie"],
+        reponse: "Afrique du Sud"
+      },
+      {
+        question: "Quel pays a accueilli la Coupe d'Afrique des Nations 2019 ?",
+        options: ["Egypte", "Afrique du Sud", "Cameroun", "Nigeria"],
+        reponse: "Egypte"
+      },
+      {
+        question: "Quel pays a remporté la Coupe du Monde 2018 ?",
+        options: ["France", "Croatie", "Allemagne", "Brésil"],
+        reponse: "France"
+      },
+      {
+        question: "Quel joueur détient le record du plus grand nombre de passes décisives en Ligue des Champions ?",
+        options: ["Lionel Messi", "Cristiano Ronaldo", "Xavi", "Thomas Müller"],
+        reponse: "Cristiano Ronaldo"
       },
       {
         question: "Quel entraîneur a remporté le plus de fois la Ligue des Champions ?",
         options: ["Carlo Ancelotti", "Zinédine Zidane", "Pep Guardiola", "Alex Ferguson"],
         reponse: "Carlo Ancelotti"
-      },
+      }
     ];
-    
+
     // Variables pour la gestion du quiz
     let indiceQuestionActuelle = 0;
     let score = 0;
-    
+
     const elementQuestion = document.getElementById("question");
     const elementOptions = document.getElementById("options");
     const boutonValider = document.getElementById("valider");
     const elementResultat = document.getElementById("resultat");
     const elementScore = document.getElementById("score");
-    
+
     // Charger une question
     function chargerQuestion() {
-      const questionActuelle = quizLDC[indiceQuestionActuelle];
+      const questionActuelle = quizComps[indiceQuestionActuelle];
       elementQuestion.textContent = questionActuelle.question;
       elementOptions.innerHTML = "";
-    
+
       questionActuelle.options.forEach((option) => {
         const li = document.createElement("li");
         const input = document.createElement("input");
@@ -124,38 +174,38 @@
         li.appendChild(document.createTextNode(option));
         elementOptions.appendChild(li);
       });
-    
+
       boutonValider.disabled = true;
     }
-    
+
     // Activer le bouton lorsqu'une option est sélectionnée
     elementOptions.addEventListener("click", () => {
       const optionSelectionnee = document.querySelector('input[name="reponse"]:checked');
       boutonValider.disabled = !optionSelectionnee;
     });
-    
+
     // Gérer le clic sur le bouton valider
     boutonValider.addEventListener("click", () => {
       const optionSelectionnee = document.querySelector('input[name="reponse"]:checked');
-      if (optionSelectionnee && optionSelectionnee.value === quizLDC[indiceQuestionActuelle].reponse) {
+      if (optionSelectionnee && optionSelectionnee.value === quizComps[indiceQuestionActuelle].reponse) {
         score++;
       }
-    
+
       indiceQuestionActuelle++;
-      if (indiceQuestionActuelle < quizLDC.length) {
+      if (indiceQuestionActuelle < quizComps.length) {
         chargerQuestion();
       } else {
         afficherResultat();
       }
     });
-    
+
     // Afficher le résultat final
     function afficherResultat() {
       document.getElementById("quiz").style.display = "none";
       elementResultat.style.display = "block";
-      elementScore.textContent = `${score} / ${quizLDC.length}`;
+      elementScore.textContent = `${score} / ${quizComps.length}`;
     }
-    
+
     // Réinitialiser le quiz
     function recommencerQuiz() {
       document.getElementById("resultat").style.display = "none";
@@ -164,7 +214,7 @@
       chargerQuestion();
       document.getElementById("quiz").style.display = "block";
     }
-    
+
     // Charger la première question au début
     chargerQuestion();
   </script>
