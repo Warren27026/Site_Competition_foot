@@ -60,9 +60,11 @@ $email_stocke = isset($_COOKIE['user_email']) ? $_COOKIE['user_email'] : '';
 
 <form method="post" action="connexion.php">
 <label for="email">Adresse email</label>
-<input type="email" id="email" name="email" placeholder="Entrez votre email..." value="<?php echo htmlspecialchars($email_stocke); ?" required> <br><br>
+<input type="email" id="email" name="email" placeholder="Entrez votre email..." value="<?php echo htmlspecialchars($email_stocke); ?>" required> <br><br>
 
-<label for="password">mot de passe</label>
+
+
+<label for="password"> mot de passe</label>
 <input type="password" id="password" name="password" placeholder="Entrez votre mdp" required> <br><br>
 
 <label>

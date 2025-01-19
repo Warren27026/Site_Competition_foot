@@ -26,7 +26,7 @@ if (isset($_POST['inscription'])) {
     
             if ($verifRequete->rowCount() > 0) {
                 // Si l'utilisateur existe déjà
-                echo "Vous avez déjà un compte.</br> Vous serez redirigé vers la page de connexion dans 5 secondes.";
+                echo "cette adresse a  déjà un compte.</br></br> Vous serez redirigé vers la page de connexion dans 5 secondes.";
               header("Refresh:5; url=connexion.php");// Redirection automatique après 5 secondes vers la page de connexion
               exit;
                   //Utilisateur existant
