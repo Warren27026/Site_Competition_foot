@@ -1,4 +1,4 @@
-
+<!--Nana Talom-->
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -51,22 +51,24 @@
         }
     </style>
 </head>
-<body>
+<body onclick="naviguerVersPage()">
     <!-- Conteneur pour les vidéos en fond d'écran -->
     <div class="fond-video">
-        <video src="foot1.mp4" class="actif" autoplay muted loop></video>
-        <video src="foot2.mp4" muted loop></video>
-        <video src="foot3.mp4" muted loop></video>
-        <video src="foot4.mp4" muted loop></video>
-        <video src="foot5.mp4" muted loop></video>
+        <video src="image/uefa.mp4" class="actif" autoplay muted loop></video>
+        <video src="image/foot1.mp4" muted loop></video>
+        <video src="image/foot2.mp4" muted loop></video>
+        <video src="image/foot3.mp4" muted loop></video>
+        <video src="image/foot4.mp4" muted loop></video>
+        <video src="image/foot5.mp4" muted loop></video>
     </div>
 
     <!-- Contenu de la page par-dessus les vidéos -->
     <div class="contenu">
-        <h1>EASPORT</h1>
-        <P>C'EST DANS LE JEU !!!!!</P>
+        <h1>Footix</h1>
+        <P>Cliquez pour avancer</P>
     </div>
-
+<!-- Musique en fond -->
+<audio id="musique-fond" src="image/UEFA Champions League - Main Theme.mp3" autoplay loop></audio>
     <script>
         // Index de la vidéo active
         let indexVideo = 0;
@@ -88,9 +90,17 @@
             // Lancer la lecture de la nouvelle vidéo
             videos[indexVideo].play();
         }
+         // Fonction pour naviguer vers une autre page
+         function naviguerVersPage() {
+            window.location.href = "accueil.html"; // Remplacez par le lien de la page suivante
+        }
         
-        // Changer la vidéo toutes les 3 secondes
-        setInterval(changerVideo, 3000);
+        
+        // Changer la vidéo toutes les 10 secondes
+        setInterval(changerVideo, 10000);
+         // Contrôle du volume de la musique
+         const musiqueFond = document.getElementById('musique-fond');
+        musiqueFond.volume = 0.6; // Réduisez le volume si nécessaire
     </script>
 </body>
 </html>

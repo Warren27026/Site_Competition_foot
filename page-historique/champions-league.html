@@ -3,85 +3,166 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>champion's league</title>
+  <title>Ligue des Champions</title>
   <link href="style.css" rel="stylesheet" media="all">
+  
 </head>
 <body>
   <!-- Barre de navigation -->
   <nav>
     <div class="logo">
-      <a href="#">Champions league</a>
+      <a href="../accueil.html">Accueil</a>
+      <a href="#">LDC</a>
     </div>
-    <div class="nav-links">
+    <div class="nav-links" id="navLinks">
       <a href="#palmares">Palmarès</a>
       <a href="#historique">Historique</a>
       <a href="#moments">Moments Mémorables</a>
-      <a href="../Page-quiz/champions.html">Quiz</a>
+      <a href="../Page-quiz/LDC.html">Quiz</a>
+    </div>
+    <!-- Menu burger -->
+    <div class="burger" id="burger">
+      <div></div>
+      <div></div>
+      <div></div>
+
     </div>
   </nav>
 
   <!-- En-tête principale -->
   <header class="entete">
-    <h1>Champions league</h1>
-    <p>slogan</p>
+    <h1>Ligue des Champions</h1>
+    <p>Le sommet du football européen</p>
   </header>
 
   <!-- Section : Historique -->
   <section id="historique" class="section">
     <h2>Historique de la Compétition</h2>
     <p>
-      Plongez dans l'origine et l'évolution des grandes compétitions internationales de football. Découvrez comment elles ont façonné le sport roi au fil des décennies.
-    </p>
-    <p>
-      De la première Coupe du Monde en 1930 aux tournois modernes, revivez les temps forts de l'histoire.
-    </p>
-  </section>
-  
-  <!-- Section : Palmarès -->
-  <section id="palmares" class="section">
-    <h2>Palmarès</h2>
-    <p>
-      Découvrez les équipes victorieuses des plus grandes compétitions internationales, des Coupes du Monde de la FIFA aux championnats continentaux.
-    </p>
-    <p>
-      Explorez les statistiques, les records, et les performances qui ont marqué l'histoire.
+      Explorez l'histoire riche et fascinante de la Ligue des Champions. Découvrez comment elle est devenue le tournoi de clubs le plus prestigieux au monde.
     </p>
   </section>
 
+  <!-- Section : Palmarès -->
+  <section id="palmares" class="section">
+    <h2>Palmarès de la Ligue des Champions</h2>
+    <p>Voici la liste des clubs ayant remporté le plus de titres :</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Club</th>
+          <th>Nombre de victoires</th>
+          <th>Années de victoire</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Real Madrid</td>
+          <td>14</td>
+          <td>1956, 1957, 1958, 1959, 1960, 1966, 1998, 2000, 2002, 2014, 2016, 2017, 2018, 2022</td>
+        </tr>
+        <tr>
+          <td>AC Milan</td>
+          <td>7</td>
+          <td>1963, 1969, 1989, 1990, 1994, 2003, 2007</td>
+        </tr>
+        <tr>
+          <td>Liverpool</td>
+          <td>6</td>
+          <td>1977, 1978, 1981, 1984, 2005, 2019</td>
+        </tr>
+        <tr>
+          <td>FC Bayern Munich</td>
+          <td>6</td>
+          <td>1974, 1975, 1976, 2001, 2013, 2020</td>
+        </tr>
+        <tr>
+          <td>FC Barcelone</td>
+          <td>5</td>
+          <td>1992, 2006, 2009, 2011, 2015</td>
+        </tr>
+        <!-- Ajouter d'autres clubs si nécessaire -->
+      </tbody>
+    </table>
+
+    <h3>Les meilleurs buteurs de l'histoire de la LDC</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Joueur</th>
+          <th>Nationalité</th>
+          <th>Buts</th>
+          <th>Années actives</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Cristiano Ronaldo</td>
+          <td>Portugal</td>
+          <td>141</td>
+          <td>2003-2023</td>
+        </tr>
+        <tr>
+          <td>Lionel Messi</td>
+          <td>Argentine</td>
+          <td>129</td>
+          <td>2004-2023</td>
+        </tr>
+        <tr>
+          <td>Robert Lewandowski</td>
+          <td>Pologne</td>
+          <td>91</td>
+          <td>2011-2023</td>
+        </tr>
+        <tr>
+          <td>Karin Benzema</td>
+          <td>France</td>
+          <td>90</td>
+          <td>2005-2023</td>
+        </tr>
+        <tr>
+          <td>Raúl González</td>
+          <td>Espagne</td>
+          <td>71</td>
+          <td>1994-2010</td>
+        </tr>
+        <!-- Ajouter d'autres joueurs si nécessaire -->
+      </tbody>
+    </table>
+  </section>
 
   <!-- Section : Moments mémorables -->
   <section id="moments" class="section">
     <h2>Moments Mémorables</h2>
-    <p>Revivez les plus grands matchs et événements qui ont marqué l’histoire des compétitions.</p>
+    <p>Revivez les matchs et moments iconiques qui ont marqué l'histoire de la Ligue des Champions.</p>
 
     <!-- Galerie de vidéos -->
     <div class="video-gallery">
-        <div class="video-item">
-            <video controls>
-                <source src="video1.mp4" type="video/mp4">
-                Votre navigateur ne prend pas en charge la balise vidéo.
-            </video>
-            <h3>Grand match de 1998</h3>
-        </div>
-        <div class="video-item">
-            <video controls>
-                <source src="video2.mp4" type="video/mp4">
-                Votre navigateur ne prend pas en charge la balise vidéo.
-            </video>
-            <h3>Le but légendaire de 2002</h3>
-        </div>
-        <div class="video-item">
-            <video controls>
-                <source src="video3.mp4" type="video/mp4">
-                Votre navigateur ne prend pas en charge la balise vidéo.
-            </video>
-            <h3>Un retournement de situation incroyable</h3>
-        </div>
-        <!-- Ajouter d'autres vidéos selon besoin -->
+      <div class="video-item">
+        <video controls>
+          <source src="../image/ldc19992.mp4" type="video/mp4">
+          Votre navigateur ne prend pas en charge la balise vidéo.
+        </video>
+        <h3>Finale 1999 : Le miracle de Manchester United</h3>
+      </div>
+      <div class="video-item">
+        <video controls>
+          <source src="../image/ldc1999.mp4" type="video/mp4">
+          Votre navigateur ne prend pas en charge la balise vidéo.
+        </video>
+        <h3>Le but inoubliable de Zidane en 2002</h3>
+      </div>
+      <div class="video-item">
+        <video controls>
+          <source src="../image/ldc2017.mp4" type="video/mp4">
+          Votre navigateur ne prend pas en charge la balise vidéo.
+        </video>
+        <h3>Le "Remontada" de Barcelone en 2017</h3>
+      </div>
     </div>
-</section>
-
-
+  </section>
+<!-- Musique en fond -->
+<audio id="musique-fond" src="../image/UEFA Champions League - Main Theme.mp3" autoplay loop></audio>
   <!-- Pied de page -->
   <footer>
     <p>&copy; 2025 Football Historique. Tous droits réservés.</p>
@@ -91,5 +172,18 @@
       <a href="#moments">Moments Mémorables</a>
     </p>
   </footer>
+  <script>
+    // Fonction pour basculer l'affichage du menu burger
+    const boutonBurger = document.getElementById('burger');
+    const liensNav = document.querySelector('navLinks');
+
+    // Ajouter un événement de clic sur le bouton burger
+    boutonBurger.addEventListener('click', () => {
+      // Bascule la classe 'actif' pour afficher/masquer les liens de navigation
+      navLinks.classList.toggle('actif');
+    });
+    const musiqueFond = document.getElementById('musique-fond');
+        musiqueFond.volume = 0.6; // Réduisez le volume si nécessaire
+  </script>
 </body>
 </html>

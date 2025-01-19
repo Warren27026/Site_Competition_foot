@@ -3,84 +3,168 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Euro</title>
+  <title>Championnat d'Europe</title>
   <link href="style.css" rel="stylesheet" media="all">
+
 </head>
 <body>
   <!-- Barre de navigation -->
   <nav>
     <div class="logo">
+      <a href="../accueil.html">Accueil</a>
       <a href="#">Euro</a>
     </div>
-    <div class="nav-links">
+    <div class="nav-links" id="navLinks">
       <a href="#palmares">Palmarès</a>
       <a href="#historique">Historique</a>
       <a href="#moments">Moments Mémorables</a>
-      <a href="../Page-quiz/euro.html">Quiz</a>
+      <a href="../Page-quiz/Euro.html">Quiz</a>
+    </div>
+    <!-- Menu burger -->
+    <div class="burger" id="burger">
+      <div></div>
+      <div></div>
+      <div></div>
+
     </div>
   </nav>
+  
 
   <!-- En-tête principale -->
   <header class="entete">
-    <h1>Euro</h1>
-    <p>slogan</p>
+    <h1>Championnat d'Europe</h1>
+    <p>La compétition des nations européennes</p>
   </header>
 
-  <!-- Section : Historique -->
-  <section id="historique" class="section">
-    <h2>Historique de la Compétition</h2>
-    <p>
-      Plongez dans l'origine et l'évolution des grandes compétitions internationales de football. Découvrez comment elles ont façonné le sport roi au fil des décennies.
-    </p>
-    <p>
-      De la première Coupe du Monde en 1930 aux tournois modernes, revivez les temps forts de l'histoire.
-    </p>
-  </section>
-  
+<!-- Section : Historique -->
+<section id="historique" class="section">
+  <h2>Historique de la Compétition</h2>
+  <p>
+    Le Championnat d'Europe, connu sous le nom d'Euro, a débuté en 1960 et est devenu l'un des tournois les plus prestigieux du football mondial.
+  </p>
+
+  <h3>Les Débuts (1960-1980)</h3>
+  <p>
+    Le premier tournoi Euro a eu lieu en 1960 en France, où l'Union soviétique a remporté la première édition. Au cours des décennies suivantes, l'Euro est devenu une plateforme pour les meilleures équipes européennes. L'Allemagne et la France étaient des figures dominantes, avec des victoires importantes dans les années 1970 et 1980.
+  </p>
+
+  <h3>Les Années 1990 : L'Expansion et la Compétition de Haut Niveau</h3>
+  <p>
+    Les années 1990 ont vu une expansion du tournoi, avec plus d'équipes et un niveau de jeu plus élevé. L'Allemagne a remporté l'Euro 1996, tandis que la France est devenue une équipe incontournable en 1984 et 2000, lorsqu'elle a triomphé chez elle avec des joueurs comme Platini et Zidane.
+  </p>
+
+  <h3>Les Années 2000 à 2020 : L'Euro dans le Monde Moderne</h3>
+  <p>
+    Dans les années 2000, l'Euro s'est affirmé comme un événement mondial majeur, avec l'Espagne et l'Allemagne dominant la compétition. L'Espagne a remporté deux titres consécutifs en 2008 et 2012, devenant une force inarrêtable. En 2016, le Portugal a créé l'histoire en remportant son premier Euro avec Cristiano Ronaldo en tête d'affiche.
+  </p>
+
+  <h3>Conclusion</h3>
+  <p>
+    L'Euro reste l'une des compétitions les plus importantes et les plus suivies au monde. Chaque édition est l'occasion de découvrir des talents européens émergents et de voir les meilleures équipes de football s'affronter sur le continent.
+  </p>
+</section>
+
   <!-- Section : Palmarès -->
   <section id="palmares" class="section">
-    <h2>Palmarès</h2>
-    <p>
-      Découvrez les équipes victorieuses des plus grandes compétitions internationales, des Coupes du Monde de la FIFA aux championnats continentaux.
-    </p>
-    <p>
-      Explorez les statistiques, les records, et les performances qui ont marqué l'histoire.
-    </p>
-  </section>
+    <h2>Palmarès de l'Euro</h2>
+    <p>Voici la liste des équipes ayant remporté le plus de titres :</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Équipe</th>
+          <th>Nombre de victoires</th>
+          <th>Années de victoire</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Allemagne</td>
+          <td>3</td>
+          <td>1972, 1980, 1996</td>
+        </tr>
+        <tr>
+          <td>Espagne</td>
+          <td>3</td>
+          <td>1964, 2008, 2012</td>
+        </tr>
+        <tr>
+          <td>France</td>
+          <td>2</td>
+          <td>1984, 2000</td>
+        </tr>
+        <tr>
+          <td>Italie</td>
+          <td>2</td>
+          <td>1968, 2020</td>
+        </tr>
+        <!-- Ajouter d'autres équipes si nécessaire -->
+      </tbody>
+    </table>
 
+    <h3>Les meilleurs buteurs de l'histoire de l'Euro</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Joueur</th>
+          <th>Nationalité</th>
+          <th>Buts</th>
+          <th>Années actives</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Cristiano Ronaldo</td>
+          <td>Portugal</td>
+          <td>14</td>
+          <td>2004-2021</td>
+        </tr>
+        <tr>
+          <td>Michel Platini</td>
+          <td>France</td>
+          <td>9</td>
+          <td>1984</td>
+        </tr>
+        <tr>
+          <td>Alan Shearer</td>
+          <td>Angleterre</td>
+          <td>7</td>
+          <td>1992-2000</td>
+        </tr>
+        <!-- Ajouter d'autres joueurs si nécessaire -->
+      </tbody>
+    </table>
+  </section>
 
   <!-- Section : Moments mémorables -->
   <section id="moments" class="section">
     <h2>Moments Mémorables</h2>
-    <p>Revivez les plus grands matchs et événements qui ont marqué l’histoire des compétitions.</p>
+    <p>Revivez les matchs et moments iconiques qui ont marqué l'histoire du Championnat d'Europe.</p>
 
     <!-- Galerie de vidéos -->
     <div class="video-gallery">
-        <div class="video-item">
-            <video controls>
-                <source src="video1.mp4" type="video/mp4">
-                Votre navigateur ne prend pas en charge la balise vidéo.
-            </video>
-            <h3>Grand match de 1998</h3>
-        </div>
-        <div class="video-item">
-            <video controls>
-                <source src="video2.mp4" type="video/mp4">
-                Votre navigateur ne prend pas en charge la balise vidéo.
-            </video>
-            <h3>Le but légendaire de 2002</h3>
-        </div>
-        <div class="video-item">
-            <video controls>
-                <source src="video3.mp4" type="video/mp4">
-                Votre navigateur ne prend pas en charge la balise vidéo.
-            </video>
-            <h3>Un retournement de situation incroyable</h3>
-        </div>
-        <!-- Ajouter d'autres vidéos-->
+      <div class="video-item">
+        <video controls>
+          <source src="../image/euro2000.mp4" type="video/mp4">
+          Votre navigateur ne prend pas en charge la balise vidéo.
+        </video>
+        <h3>Finale 2000 : Le but en or de Trezeguet</h3>
+      </div>
+      <div class="video-item">
+        <video controls>
+          <source src="../image/euro1982.mp4" type="video/mp4">
+          Votre navigateur ne prend pas en charge la balise vidéo.
+        </video>
+        <h3>La victoire historique du Danemark en 1992</h3>
+      </div>
+      <div class="video-item">
+        <video controls>
+          <source src="../image/euro2016.mp4" type="video/mp4">
+          Votre navigateur ne prend pas en charge la balise vidéo.
+        </video>
+        <h3>Le triomphe du Portugal en 2016</h3>
+      </div>
     </div>
-</section>
-
+  </section>
 
   <!-- Pied de page -->
   <footer>
@@ -91,5 +175,16 @@
       <a href="#moments">Moments Mémorables</a>
     </p>
   </footer>
+  <script>
+    // Fonction pour basculer l'affichage du menu burger
+    const boutonBurger = document.getElementById('burger');
+    const liensNav = document.querySelector('navLinks');
+
+    // Ajouter un événement de clic sur le bouton burger
+    boutonBurger.addEventListener('click', () => {
+      // Bascule la classe 'actif' pour afficher/masquer les liens de navigation
+      navLinks.classList.toggle('actif');
+    });
+  </script>
 </body>
 </html>

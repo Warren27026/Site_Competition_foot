@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     setcookie('user_email', $user['email'], time() + (86400 * 30), "/");
                 }
 
-                header("Location: ../page-quiz/accueil-quiz.html"); 
+                header("Location: ../video changente.html"); 
                 exit;   
             } else {
                 $message = "Adresse email ou mot de passe incorrect.";
