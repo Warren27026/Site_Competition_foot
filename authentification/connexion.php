@@ -19,6 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 // Stocke les informations utilisateur dans la session
                 $_SESSION['user_id'] = $user['id'];
                 $_SESSION['user_email'] = $user['email'];
+                $_SESSION['username'] = $user['username']; // Ajout du nom d'utilisateur dans la session
                 
                 // Gère l'option "Se souvenir de moi"
                 if (isset($_POST['se_souvenir'])) {
